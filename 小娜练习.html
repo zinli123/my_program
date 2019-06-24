@@ -29,6 +29,10 @@
         var quz = prompt('请输入你要求和的数字，以逗号隔开，例如： 1,2,3,4');
         var arr = quz.split(',');
         var sum = 0;
+        if (isNaN(quz)) {
+          alert('请输入正确的');
+          break;
+        }
         for (var i = 0; i < arr.length; i++) {
           sum += parseFloat(arr[i]);
         }
@@ -43,15 +47,24 @@
         var hours = date.getHours();
         var minute = date.getMinutes();
         var second = date.getSeconds();
+        year = year < 10 ? year = '0' + year : year;
+        month = month < 10 ? month = '0' + month : month;
+        day = day < 10 ? day = '0' + day : day;
+        hours = hours < 10 ? hours = '0' + hours : hours;
+        minute = minute < 10 ? minute = '0' + minute : minute;
+        second = second < 10 ? second = '0' + second : second;
         alert('当前时间为' + year + '-' + month + '-' + day + ' ' + hours + ':' + minute + ':' + second);
         break;
       case '3':
       case '笑话':
-
+        var joke = ['1', '2', '3', '4', '5', '6'];
+        var i = Math.floor(Math.random() * joke.length)
+        alert(joke[i]);
         break;
-
+      default:
+        alert('滚吧,乱几把输入')
+        break;
     }
-
   }
 </script>
 
