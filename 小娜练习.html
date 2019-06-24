@@ -11,5 +11,48 @@
 <body>
 
 </body>
+<script>
+  //true是一直执行
+  while (true) {
+    var msg = prompt("你好，我是传智小娜，你的语音助手~~~~~~~\n" +
+      "输入《编号》或《关键词》选择功能，输入q退出聊天\n" +
+      " 1.计算《总和》\n" +
+      " 2.获取《时间》\n" +
+      " 3.讲个《笑话》\n");
+    if (msg === 'q') {
+      alert('你不喜欢我的服务了');
+      break;
+    }
+    switch (msg) {
+      case '1':
+      case '总和':
+        var quz = prompt('请输入你要求和的数字，以逗号隔开，例如： 1,2,3,4');
+        var arr = quz.split(',');
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+          sum += parseFloat(arr[i]);
+        }
+        alert(sum);
+        break;
+      case '2':
+      case '时间':
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate()
+        var hours = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        alert('当前时间为' + year + '-' + month + '-' + day + ' ' + hours + ':' + minute + ':' + second);
+        break;
+      case '3':
+      case '笑话':
+
+        break;
+
+    }
+
+  }
+</script>
 
 </html>
