@@ -104,8 +104,8 @@
       return sum;
     }
     console.log(getSum(1, 10));
-  
-  
+
+
     // 求圆的面积
     function getCircle(r) {
       var sum = 0;
@@ -114,7 +114,7 @@
       return Number(num.toFixed(3));
     }
     console.log(getCircle(1));
-  
+
     //求三个数的和
     function getSum1(n, m, u) {
       var sum = 0;
@@ -124,16 +124,86 @@
     console.log(getSum1(1, 2, 3));
   */
 
+  /*
+  function getSum(n, m) {
+    var sum = 0;
+    var n = Number(prompt('请输入一个数'));
+    var m = Number(prompt('请输入一个数'));
+    for (var i = n; i <= m; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+  console.log(getSum());
+  */
 
-  var num1;
-  function fn() {
-    var num1;
-    console.log(num1);
-    num1 = 20;
-  };
-  num1 = 10;
-  fn();
-  console.log(num1);
+  // argument = [2, 5, 6, 7, 8];
+  // var sum = 0;
+  // for (var i = 0; i < argument.length; i++) {
+  //   sum += argument[i];
+  // }
+  // console.log(sum);
+
+  // 求n个数中的最大值
+  // function getMax() {
+  //   var max = arguments[0];
+  //   for (var i = 1; i < arguments.length; i++) {
+  //     if (max < arguments[i]) {
+  //       max = arguments[i];
+  //     };
+  //   };
+  //   return max;
+  // };
+  // console.log(getMax(4, 5, 6, 2, 32, 42, 1));
+
+  // 判断一个数字是否素数
+  // function isPrime(n) {
+  //   var flag = true;
+  //   for (var i = 2; i < n; i++) {
+  //     if (n % i === 0) {
+  //       flag = false;
+  //       break;
+  //     }
+  //   }
+  //   return flag;
+  // }
+  // console.log(isPrime(3));
+
+
+  /*
+    // 冒泡排序
+    arr = [1, 2, 33, 24, 15, 26, 77];
+    for (var i = 0; i < arr.length - 1; i++) {
+      for (var j = 0; j < arr.length - 1 - i; j++) {
+        if (arr[j] > arr[j + 1]) {
+          var temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+        }
+      }
+    }
+    console.log(arr);
+  */
+
+  //求数组的最大值
+
+  function car(brand, color, weight, price) {
+    this.brand = brand;
+    this.color = color;
+    this.weight = weight;
+    this.price = price;
+    this.startup = function () {
+      console.log('轰轰轰');
+    };
+    this.turnoff = function () {
+      console.log('熄火了');
+    }
+  }
+  var c1 = new car('奥迪', '银色', '3t', '180w');
+  c1.startup();
+  c1.turnoff();
+  console.log(c1);
+
 </script>
 
 </html>
