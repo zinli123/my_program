@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // 封装小娜
+  function xiaona() {
+    //1.弹出询问框
+    this.ask = function () {
+      var msg = prompt("你好，我是传智小娜，你的语音助手~~~~~~~\n" +
+        "输入《编号》或《关键词》选择功能，输入q退出聊天\n" +
+        " 1.计算《总和》\n" +
+        " 2.获取《时间》\n" +
+        " 3.讲个《笑话》\n");
+      return msg;
+    }
+    //2.求和
+    this.calculate = function () {
+      var quz = prompt('请输入你要求和的数字，以逗号隔开，例如： 1,2,3,4');
+      var arr = quz.split(',');
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum += parseFloat(arr[i]);
+      }
+      alert(sum);
+    }
+    //时间
+    this.getDate = function () {
+      var date = new Date();
+      var y = date.getFullYear();
+      var M = date.getMonth() + 1;
+      var d = date.getDate();
+      var h = date.getHours();
+      var m = date.getMinutes();
+      var s = date.getSeconds();
+      function patchZero(time) {
+        if (time < 10) {
+          time = '0' + time;
+        }
+        return time;
+      }
+      m = patchZero(m);
+      d = patchZero(d);
+      h = patchZero(h);
+      m = patchZero(m);
+      s = patchZero(s);
+      var time = y + '-' + M + '-' + d + ' ' + h + ':' + m + ':' + s;
+      alert(time);
+    }
+    //笑话
+    this.jokes = function () {
+      var joke = ['骑着我的小摩托', '它永远不会堵车', '骑上我心爱的小摩托', '我马上就到家了', '他让我重新回到自由天堂', '来吧来吧和我一起上路', '嘟嘟嘟 嘟嘟嘟嘟 嘟嘟嘟嘟......'];
+      var i = Math.floor(Math.random() * joke.length);
+      alert(joke[i]);
+    }
+    //错误
+    this.mistake = function () {
+      alert('理解有误,请重新输入');
+    }
+  }
+
+
+
+  var XiaoNa = new xiaona();
+  while (true) {
+    //提问
+    var msg = XiaoNa.ask();
+    //退出
+    if (msg === 'q') {
+      break;
+    }
+    switch (msg) {
+      //求和
+      case '1':
+      case '总和':
+        XiaoNa.calculate();
+        break;
+      //求当前时间
+      case '2':
+      case '时间':
+        XiaoNa.getDate();
+        break;
+      //笑话的输出
+      case '3':
+      case '笑话':
+        XiaoNa.jokes();
+        break;
+      default:
+        XiaoNa.mistake();
+        break;
+    }
+  }
+</script>
+
+</html>
