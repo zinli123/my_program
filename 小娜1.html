@@ -19,6 +19,56 @@
       " 2.获取《时间》\n" +
       " 3.讲个《笑话》\n" +
       "退出请输入q\n");
+    //求和的函数封装
+    function getSum(arr) {
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum += parseFloat(arr[i]);
+      }
+      return sum;
+    };
+
+    function input() {
+      var quz = prompt('请输入你要求和的数字,用逗号分隔开,如1,2,3,4,5');
+      var arr = quz.split(',');
+      var sum = getSum(arr);
+      return sum;
+    }
+
+    //时间的函数封装
+    function patchZero(time) {
+      if (time < 10) {
+        time = '0' + time;
+      }
+      return time;
+    }
+
+    function getTime() {
+      var date = new Date();
+      var y = date.getFullYear();
+      var m = date.getMonth();
+      var d = date.getDate();
+      var h = date.getHours();
+      var m = date.getMinutes();
+      var s = date.getSeconds();
+      y = patchZero(y);
+      m = patchZero(m);
+      d = patchZero(d);
+      h = patchZero(h);
+      m = patchZero(m);
+      s = patchZero(s);
+      var number = y + '-' + m + '-' + d + ' ' + h + ':' + m + ':' + s;
+      return number;
+    }
+
+    //笑话的函数封装
+    function getJoke() {
+      var joke = ['骑着我的小摩托', '它永远不会堵车', '骑上我心爱的小摩托', '我马上就到家了', '他让我重新回到自由天堂', '来吧来吧和我一起上路', '嘟嘟嘟 嘟嘟嘟嘟 嘟嘟嘟嘟......'];
+      var i = Math.floor(Math.random() * joke.length);
+      return joke[i];
+    }
+
+
     if (msg === 'q') {
       alert('您要走了吗,希望你还记得我');
       break;
@@ -26,36 +76,18 @@
     switch (msg) {
       case '1':
       case '总和':
-        var quz = prompt('请输入你要求和的数字,用逗号分隔开,如1,2,3,4,5');
-        var arr = quz.split(',');
-        var sum = 0;
-        for (var i = 0; i < arr.length; i++) {
-          sum += parseFloat(arr[i]);
-        }
+        var sum = input();
         alert(sum);
         break;
       case '2':
       case '时间':
-        var date = new Date();
-        var year = date.getFullYear();
-        var month = date.getMonth();
-        var day = date.getDate();
-        var hour = date.getHours();
-        var minute = date.getMinutes();
-        var second = date.getSeconds();
-        year = year < 10 ? year = "0" + year : year;
-        month = month < 10 ? month = "0" + month : month;
-        day = day < 10 ? day = "0" + day : day;
-        hour = hour < 10 ? hour = "0" + hour : hour;
-        minute = minute < 10 ? minute = "0" + minute : minute;
-        second = second < 10 ? second = "0" + second : second;
-        alert('当前时间为' + year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+        var number = getTime();
+        alert('当前时间为' + number);
         break;
       case '3':
       case '笑话':
-        var joke = ['骑着我的小摩托', '它永远不会堵车', '骑上我心爱的小摩托', '我马上就到家了', '他让我重新回到自由天堂', '来吧来吧和我一起上路', '嘟嘟嘟 嘟嘟嘟嘟 嘟嘟嘟嘟......'];
-        var i = Math.floor(Math.random() * joke.length);
-        alert(joke[i]);
+        getJoke();
+        alert(getJoke());
         break;
       default:
         alert('我还不理解,请重新输入');
