@@ -15,7 +15,7 @@
 </head>
 
 <body>
-
+  <input type="button" value="随机颜色" id="rdColor">
 </body>
 <script>
   // var number = prompt('请输入第一个数');
@@ -201,9 +201,60 @@
     console.log(start);
   */
 
+  /*
+      //封装一个随机区间的整数的函数
+    function randomInt(n,m){
+      return Math.floor(Math.random()*(m-n+1)+n);
+    }
+    //封装一个可以获得随机颜色的函数
+    function randomColor(){
+      var r = randomInt(0,255);
+      var g = randomInt(0,255);
+      var b = randomInt(0,255);
+      return 'rgb('+ r +','+ g +','+ b +')';
+    }
+  
+    //注册事件
+    var btn = document.getElementById('rdColor');
+    btn.onclick=function(){
+      document.body.style.backgroundColor = randomColor();
+    }
+  */
+  var arr = [1, 2, 3, 4, 5]
+  // for (var i = 0; i < arr.length / 2; i++) {
+  //   var temp = arr[i];
+  //   arr[i] = arr[arr.length - i - 1];
+  //   arr[arr.length - i - 1] = temp;
+  // }
 
+  var arr = [3, 2, 5, 6, 7, 1, 4]
+  for (var i = 0; i < arr.length - 1; i++) {
+    for (var j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        var temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  console.log(arr);
 
+  var arr = [1, 2, 3, 4, 5];
+  arr.reverse();
+  console.log(arr);
 
+  var arr = [2500, 1000, 3000, 4000, 1500];
+  var arr2 = arr.filter(function (e, i) {
+    return e > 2000;
+  })
+  console.log(arr2);
+
+  var arr = [1, 2, 3, 4, 5];
+  var sum = 1;
+  var arr2 = arr.forEach(function (e, i) {
+    sum *= arr[i];
+  })
+  console.log(sum)
 </script>
 
 </html>
