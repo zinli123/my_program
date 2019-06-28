@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+  //16进制的随机颜色
+  //思路1
+  /*
+  //把所有颜色的字符都存储到一个数组里
+  function random() {
+    var randomColor = ['1', '2', '3', '4', '5', '6', '7', '8', '9',
+      'a', 'b', 'c', 'd', 'e', 'f']
+    //命名一个16进制格式的数组
+    var color = '#';
+    //循环6次
+    for (var i = 0; i < 6; i++) {
+      //取六次循环的随机数
+      var index = Math.floor(Math.random() * randomColor.length);
+      //按照16进制的格式拼接相加
+      color += randomColor[index];
+    }
+    //输出
+    return color;
+  }
+  console.log(random());
+  */
+
+
+  // 思路2
+  /*//创建一个函数
+  function randomColor() {
+    //声明一个拼接符
+    var color = '#';
+    //循环6次,得出六个数
+    for (var i = 0; i < 6; i++) {
+      //得到[1,16)内的随机数
+      var num = Math.floor(Math.random() * 16);
+      //把随机数转换成16进制的字符串
+      color += num.toString(16);
+    }
+    // 输出
+    return color;
+  }
+  alert(randomColor());*/
+
+
+  /*
+    // rgba格式的随机颜色
+    // 创建一个随机数的函数
+    function randomNum(n, m) {
+      //返回得到[0,256)的随机数
+      return Math.floor(Math.random() * (m - n + 1) - n);
+    }
+    // console.log(rgba(0, 255));
+
+    //创建一个函数
+    function rgba() {
+      // 调用随机数的函数
+      var r = randomNum(0, 255);
+      var g = randomNum(0, 255);
+      var b = randomNum(0, 255);
+      // 声明并调用一个随机透明度的函数
+      var a = Math.floor(Math.random() * 100) / 100;
+      // 输出rgba格式的值
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+    }
+    console.log(rgba());
+  */
+
+  /*
+    //实现Math.max()
+    //创建一个函数
+    function max() {
+      // 声明一个数组;
+      var m = arguments[0]
+      // 开始运算这个数组的长度
+      for (var i = 0; i < arguments.length; i++) {
+        //把数组内的每个数都比较一次
+        if (m < arguments[i]) {
+          // 把判断条件符合的数赋值回去
+          m = arguments[i];
+        }
+      }
+      // 输出
+      return m;
+    }
+    alert(max(2, 13, 24, 85, 35, 46, 77));
+  */
+
+  // 计算时间差,返回相差的天/时/分/秒
+  function getInterval(start, end) {
+    var day, hour, minute, second, interval;
+  }
+</script>
+
+</html>
